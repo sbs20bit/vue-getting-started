@@ -2,20 +2,21 @@
   <div id="app">
     <HeaderBar />
     <div class="main-section columns">
+      <NavBar />
       <main class="column">
-        <Heroes />
+        <router-view>
+        </router-view>
       </main>
     </div>
   </div>
 </template>
 
 <script>
+import NavBar from '@/components/navbar'
 import HeaderBar from '@/components/header-bar';
-import Heroes from '@/components/heroes';
-
 export default {
   name: 'App',
-  components: { HeaderBar, Heroes },
+  components: { HeaderBar, NavBar},
 };
 </script>
 

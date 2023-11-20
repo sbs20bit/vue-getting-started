@@ -1,0 +1,17 @@
+const drinks = [
+    {
+        id: 1,
+        name: 'His Choice',
+        description: 'Oatmilk Latte'
+    },
+    {
+        id: 2,
+        name: 'Her Choice',
+        description: 'Iced shaken Brown Sugar Oatmilk Latte'
+    },
+    {
+        id: 3,
+        name: 'Their Choice',
+        description: 'Iced Mocha'
+    }
+]

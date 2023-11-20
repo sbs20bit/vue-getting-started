@@ -1,27 +1,29 @@
 <template>
   <div class="navbar-brand">
-    <a
+    <!-- <a
       class="navbar-item"
-      href="https://vuejs.org/"
       target="_blank"
       rel="noopener noreferrer"
-    >
+    > 
       <i class="fab js-logo fa-vuejs fa-2x" aria-hidden="true" />
-    </a>
+    </a>-->
+    <div>
+      <img src="coffeeicon.png" alt="Coffee Cup" class="my-icon" height="50" width="50"/>  
+      </div>
+    <i class="" aria-hidden="true"/>
     <div class="navbar-item nav-home">
-      <span class="tour">TOUR</span>
-      <span class="of">OF</span>
-      <span class="heroes">HEROES</span>
+      <span class="tour" font-size="15px">The Rangel</span>
+      <span style="padding-left: 8px"></span>
+      <span class="heroes">CAFE</span>
     </div>
-    <button
+    <button 
       class="link navbar-burger burger"
       aria-label="menu"
       aria-expanded="false"
-      data-target="navbarBasicExample"
-    >
-      <span aria-hidden="true" />
-      <span aria-hidden="true" />
-      <span aria-hidden="true" />
+      data-target="navbarBasicExample">
+      <span aria-hidden="true"/>
+      <span aria-hidden="true"/>
+      <span aria-hidden="true"/>
     </button>
   </div>
-</template>
+</template>%

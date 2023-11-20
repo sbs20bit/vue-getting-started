@@ -1,0 +1,20 @@
+[
+    {
+        "id": 1,
+        "name": "His Choice",
+        "description": "Oatmilk Latte",
+        "imageUrl": "coffeeicon.png"
+    },
+    {
+        "id": 2,
+        "name": "Her Choice",
+        "description": "Iced shaken Brown Sugar Oatmilk Latte",
+        "imageUrl": ""    
+    },
+    {
+        "id": 3,
+        "name": "Their Choice",
+        "description": "Iced Mocha",
+        "imageUrl": ""    
+    }
+]

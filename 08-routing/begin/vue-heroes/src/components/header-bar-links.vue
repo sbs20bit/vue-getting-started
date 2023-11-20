@@ -1,14 +1,13 @@
 <template>
   <div class="navbar-menu">
     <div class="navbar-end">
-      <div class="navbar-item">
-        <div class="buttons">
-          <a :href="github" target="_blank" rel="noopener noreferrer">
-            <i class="fab fa-github fa-2x" aria-hidden="true"></i>
-          </a>
-          <a :href="twitter" target="_blank" rel="noopener noreferrer">
-            <i class="fab fa-twitter fa-2x" aria-hidden="true"></i>
-          </a>
+      <div class="navbar-brand">
+        <div>
+          <button class="button1">
+            <a :href="weddingsite" target="_blank" rel="noopener noreferrer">
+              <img src="coupleicon.png" alt="Couple" class="my-icon" height="50" width="50"/>  
+            </a>
+          </button>
         </div>
       </div>
     </div>
@@ -19,8 +18,7 @@
 export default {
   data() {
     return {
-      github: 'https://github.com/johnpapa/vue-getting-started',
-      twitter: 'https://twitter.com/john_papa',
+      weddingsite: 'https://jw.org',
     };
   },
 };

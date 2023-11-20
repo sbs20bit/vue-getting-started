@@ -1,0 +1,101 @@
+<template>
+  <div class="content-container">
+    <div class="columns">
+      <div class="column is-8">
+        <div>
+          <h2 class="title">Coffee Order</h2>
+          <ul>
+            <li v-for="drink in drinks" :key="drink.id">
+              <div class="card boxshadow" @click="AddOrder(drink)">
+                <div class="card-content" style="background-color: #fff">
+                  <div class="content">
+                    <div :key="drink.name" class="name">
+                      {{ drink.name }} 
+                    </div>
+                    <div class="description">{{ drink.description }}</div>
+                  </div>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+       <order-detail :orders="orders" v-if="orders.length > 0"></order-detail>      
+        <!-- v-if="selectedHero" 
+        :id="selectedHero.id"  @done="loadHeroes"-->         
+      
+        <div class="notification is-info" v-show="message">{{ message }}</div>
+      </div>
+    </div>
+  </div>
+</template>
+
+<script>
+import { data } from '../shared';
+import { dataService } from '../shared/data.service.js';
+import orderDetail from './order-detail.vue';
+
+export default {
+  name: 'CoffeeOrder',
+  data() {
+    return {
+      drinks: [],
+      message: '',
+      selectedDrink: undefined,
+      orders: [],
+    };
+  },
+  mixins:{dataService},
+  components: {
+    orderDetail,
+  },
+  async created() {
+    await this.loadDrinks();
+  },
+  methods: {
+    async loadDrinks() {
+      this.drinks = [];
+      this.selectedDrink = undefined;
+      this.message = 'getting the menu, please be patient';
+
+      this.drinks = await dataService.getDrinks();
+
+      this.message = '';
+    },
+    AddOrder(drink) {
+      let index = this.orders.findIndex(x => x.id == drink.id)
+      if (index >= 0) 
+        this.orders.pop(index);
+      else 
+      this.orders.push(drink);
+    }
+    // selectHero(hero) {
+    //   this.selectedHero = hero;
+    // },
+  },
+};
+</script>
+
+<style>
+
+.boxshadow{
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+}
+
+.boxshadow:hover{
+  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+}
+</style>
+
+
+
+creeate trade
+create drawdown - 
+then you can see the expected 
+there is a procedure to grab the position
+the interest is caluculated based on the lots
+there is a method called Get drawdown positions
+(ssc_loan_sec_getdrawdownpositions)
+(all in securityMasterService)
+
+drawdownevent.vue - component
+ getdrawdownpositions

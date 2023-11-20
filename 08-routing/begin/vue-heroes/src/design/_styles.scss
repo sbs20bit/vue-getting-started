@@ -64,7 +64,7 @@ header {
       color: #ccc;
     }
     &.heroes {
-      color: $primary-light;
+      color: #b3971b9a;
     }
   }
   .navbar-item.nav-home {
@@ -228,4 +228,8 @@ label.input {
 
 p.comment {
   margin: 8px;
+}
+
+img{
+  padding: 5px;
 }
