@@ -1,12 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "ezSqJhCqK9x5DMqNeAs8eEohjVVvLxqj3bvJn2Znowo4v6RiXqWCtjSPwCjg9g7UwXDzdOukCYzK23rODb/r4g==",
+  "dgSpecHash": "qOd+8NJGCQcMbvjITYklz9whN/YD722/W6inEmjJg7Yp/7lsYP/4j5eMPtvXe5qkTtVcCbH94MYMBD5hOs8qkw==",
   "success": true,
   "projectFilePath": "C:\\Users\\Samuel Borja\\VUE_Projects\\getting_started\\vue-getting-started\\08-routing\\begin\\backend\\SpecialCafe\\SpecialCafe.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Samuel Borja\\.nuget\\packages\\microsoft.aspnetcore.openapi\\7.0.3\\microsoft.aspnetcore.openapi.7.0.3.nupkg.sha512",
     "C:\\Users\\Samuel Borja\\.nuget\\packages\\microsoft.extensions.apidescription.server\\6.0.5\\microsoft.extensions.apidescription.server.6.0.5.nupkg.sha512",
     "C:\\Users\\Samuel Borja\\.nuget\\packages\\microsoft.openapi\\1.4.3\\microsoft.openapi.1.4.3.nupkg.sha512",
+    "C:\\Users\\Samuel Borja\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512",
     "C:\\Users\\Samuel Borja\\.nuget\\packages\\swashbuckle.aspnetcore\\6.4.0\\swashbuckle.aspnetcore.6.4.0.nupkg.sha512",
     "C:\\Users\\Samuel Borja\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\6.4.0\\swashbuckle.aspnetcore.swagger.6.4.0.nupkg.sha512",
     "C:\\Users\\Samuel Borja\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\6.4.0\\swashbuckle.aspnetcore.swaggergen.6.4.0.nupkg.sha512",

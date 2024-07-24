@@ -1,0 +1,17 @@
+[
+    {
+        "Id": 1,
+        "Name": "His Choice",
+        "Description": "Oatmilk Latte"
+    },
+    {
+        "Id": 2,
+        "Name": "Her Choice",
+        "Description": "Iced shaken Brown Sugar Oatmilk Latte"
+    },
+    {
+        "Id": 3,
+        "Name": "Their Choice",
+        "Description": "Iced Mocha"
+    }
+]

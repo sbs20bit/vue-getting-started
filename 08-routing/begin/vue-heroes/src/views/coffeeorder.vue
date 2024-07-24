@@ -62,7 +62,7 @@ export default {
       this.drinks = [];
       this.message = 'getting the menu, please be patient';
 
-      this.drinks = await dataService.getDrinks();
+      this.drinks = await dataService.getDrinks(); 
 
       this.message = '';
     },
