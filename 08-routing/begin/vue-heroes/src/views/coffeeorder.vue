@@ -1,20 +1,20 @@
 <template>
-  <div class="content-container">
+  <div class="content-container newbackground">
     <div class="columns">
       <div class="column is-8">
-        <div class="content-title-group ">
+        <div class="content-title-group">
           <h2 class="title">Coffee Order</h2>
           <ul>
-            <li v-for="drink in drinks" :key="drink.id" >               
-                <div class="card boxshadow" @click="AddOrder(drink)">
+            <li v-for="drink in drinks" :key="drink.Id">               
+                <div class="card boxshadow" @click.prevent="AddOrder(drink)" :class="{'borderprpl': orders.some(x => x.Id == drink.Id)}">
                 <div class="card-content">                   
                       <div class="content">
                            <!-- <div :class="{'orange-background': this.drinks.some(x=>x.Id == id)}"> -->
-                              <div :key="drink.name" class="name">
-                                {{ drink.name }}
-                                <img :src="drink.imageUrl" class="is-rounded is-50x50" style="float: right;">
+                              <div :key="drink.Name" class="name">
+                                {{ drink.Name }}
+                                <!-- <img :src="drink.imageUrl" class="is-rounded is-50x50" style="float: right;"> -->
                               </div>
-                              <div class="description">{{ drink.description }}
+                              <div class="description">{{ drink.Description}}
                               </div>
                             <!-- </div> -->
                       </div>                 
@@ -38,6 +38,7 @@
 import { data } from '../shared';
 import { dataService } from '../shared/data.service.js';
 import orderDetail from './order-detail.vue';
+import Vue from 'vue';
 
 export default {
   name: 'CoffeeOrder',
@@ -59,21 +60,32 @@ export default {
   },
   methods: {
     async loadDrinks() {
-      this.drinks = [];
+      this.drinks.length = 0;
       this.message = 'getting the menu, please be patient';
 
-      this.drinks = await dataService.getDrinks(); 
+      //this.drinks = await dataService.getDrinks(); 
+      const newDrinks = await dataService.getDrinks();
+      newDrinks.forEach((drink, index) => Vue.set(this.drinks, index, drink));
 
       this.message = '';
     },
     AddOrder(drink) {
-      let index = this.orders.findIndex(x => x.id == drink.id)
-      if (index >= 0) 
-        this.orders.splice(index,1);
-      else 
-      //this.selectedDrinks.push(drink);
-      this.orders.push(drink);
+      let index = this.orders.findIndex(x => x.Id == drink.Id)
+      console.log('Current Orders:', this.orders);
+      console.log('Clicked on:', drink);
+      console.log('index',index);
+        if (index >= 0) 
+        {
+          this.orders.splice(index,1);
+          console.log('Drink Removed:', drink);
+        }
+        else 
+        {
+          this.orders.push(drink);
+          console.log('Drink Added:', drink);
+        }
     },
+
     // isSelected(id) {
     //   return 
     //   //return (id >= 3)  
@@ -110,4 +122,12 @@ export default {
 .orange-background{
   background-color: #f5e9bc;
 }
+
+.borderprpl{
+  border-left: 15px solid #bf4e44;
+} 
+.newbackground{
+  background: #f0eee6;
+} 
+
 </style>

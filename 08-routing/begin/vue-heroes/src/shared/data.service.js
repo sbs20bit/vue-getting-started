@@ -9,55 +9,19 @@ import { API } from './config';
 const getDrinks = async function() {
     const response = await axios.get(`${API}/Cafe/GetDrinks`);
     const drinks = response.data;
-    console.log('This is response.data',response.data);
-    return drinks
-//   try{const response = await axios.get('/drinks.json');
-//   const drinks = response.data.map()
-//   return drinks;
-// Example Vue.js component
-/{/* <template>
-  <div>
-    <button @click="getData">Get Data</button>
-    <button @click="saveData">Save Data</button>
-  </div>
-</template>
+    console.log('This is response.data in data.service.js',response.data);
+    return drinks 
+  };
 
-<script>
-import axios from 'axios';
-
-export default {
-  methods: {
-    async getData() {
-      try {
-        const response = await axios.get('http://your-backend-api-url/api/cafes');
-        console.log(response.data);
-      } catch (error) {
-        console.error(error);
-      }
-    },
-
-    async saveData() {
-      try {
-        const newData = prompt('Enter new data:');
-        const response = await axios.post('http://your-backend-api-url/api/cafes', newData);
-        console.log(response.data);
-      } catch (error) {
-        console.error(error);
-      }
-    },
-  },
-};
-</script> */}
-
-
-
-
-
-// } catch(error) {
-//   console.error(error);
-//   return [];
-// }
-};
+const orderDrinks = async function(order){
+  try{
+    const response = await axios.post(`${API}/Cafe/OrderDrinks`,order)
+  }
+  catch (error) {
+    console.error(error);
+    return null;
+  }
+}
 
 const get1Drink = async function(id) {
   try {

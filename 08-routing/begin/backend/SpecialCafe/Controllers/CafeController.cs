@@ -4,6 +4,7 @@ using System;
 using System.IO;
 using SpecialCafe.Models;
 using Newtonsoft.Json;
+using System.Linq;
 
 [Route("api/[controller]")]
 [ApiController]
@@ -17,6 +18,7 @@ public class CafeController : ControllerBase
         filePath = baseDirectory + "\\database\\drinks.txt";
     }
 
+    [Route("GetDrinks")]
     [HttpGet]
     public ActionResult<List<Drink>>GetDrinks()
     { 
@@ -36,23 +38,31 @@ public class CafeController : ControllerBase
         }
     }
 
-    // [HttpPost]
-    // public ActionResult SaveData([FromBody] string newData)
-    // {
-    //     try
-    //     {
-    //         // Validate newData or perform any necessary processing
-    //         if (string.IsNullOrWhiteSpace(newData))
-    //         {
-    //             return BadRequest("New data cannot be empty.");
-    //         }
-
-    //         System.IO.File.WriteAllText(filePath, newData);
-    //         return Ok("Data saved successfully.");
-    //     }
-    //     catch (Exception ex)
-    //     {
-    //         return BadRequest($"Error: {ex.Message}");
-    //     }
-    // }
+    [HttpPost]
+    public ActionResult<string> OrderDrinks(Order order)
+    {
+        try
+        {
+            // Validate newData or perform any necessary processing
+            if (order == null)
+            {
+                return BadRequest("New data cannot be empty.");
+            }
+            if (!order.DrinksOrdered?.Any() ?? false){
+                return BadRequest("Orders is empty");
+            }
+            if (!order.CustomerName?.Any() ?? false){
+                return BadRequest("Orders is empty");
+            }
+            else{
+                System.IO.File.WriteAllText(filePath, newData);
+                return Ok("Data saved successfully.");
+            }   
+        }
+        catch (Exception ex)
+        {
+            return BadRequest($"Error: {ex.Message}");
+        }
+        return Ok("");
+    }
 }
